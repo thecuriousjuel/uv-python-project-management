@@ -90,6 +90,10 @@ Runs a command, module, or script in the context of a virtual environment. If th
   ```bash
   uv run main.py
   ```
+* **Example (Check Python Version):**
+  ```bash
+  uv run python --version
+  ```
 
 
 ### `uv sync`
@@ -110,6 +114,17 @@ Install dependencies from the lock file into the the local virtual environment (
   ```bash
   uv sync --frozen
   ```
+
+* **Example (Sync with Specific Python Version):**
+  ```bash
+  uv sync --python 3.10
+  ```
+
+* **Example (Sync with Active Virtual Environment):**
+  ```bash
+  uv sync --active
+  ```
+  *Synchronizes the project dependencies into the currently active virtual environment.*
  
 
 ### `uv lock`
@@ -211,6 +226,10 @@ Replaces tools like `pyenv` or `conda` for installing and managing Python instal
 
 ### `uv python install`
 Downloads and installs specific Python runtimes on your machine.
+* **Example (Install Specific Python Version):**
+  ```bash
+  uv python install 3.10
+  ```
 * **Example (Install Latest Python):**
   ```bash
   uv python install 3.12
@@ -224,7 +243,7 @@ Downloads and installs specific Python runtimes on your machine.
 Uninstalls specific Python runtimes managed by `uv`.
 * **Example (Uninstall Specific Version):**
   ```bash
-  uv python uninstall 3.12
+  uv python uninstall <version>
   ```
 * **Example (Uninstall Outdated Versions):**
   ```bash
